@@ -38,8 +38,9 @@ function onReady() {
     secondInputForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        if (Number.isInteger(Number(salaryRecieved))) {
+        if (typeof salaryRecieved === number) {
             salarySplitted = salaryRecieved.toString().split(''.join(" "));
+
         } else {
             alert('Entered input is not a number');
         }
