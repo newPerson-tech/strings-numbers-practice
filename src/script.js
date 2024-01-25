@@ -36,18 +36,18 @@ function onReady() {
     const outDataSecondFormEl = document.getElementById('outDataSecondForm');
 
     const textSecondOutputEl = document.createElement('span');
-    let ourSalary = 0;
+    const salarySplitted = 0;
 
     secondInputForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        if (!isNaN(number)) {
-            const numberRecieved = number.value;
-            ourSalary = numberRecieved.toString().split(''.join(" "));
+        if (!isNaN(salaryInputEl)) {
+            const salaryRecieved = salaryInputEl.value;
+            salarySplitted = alaryRecieved.toString().split(''.join(" "));
         } else {
             alert('Entered input is not a number');
         }
-        const messageTwo = `Thank you for sharing kindly your salary ${salaryInputEl} with us as ${ourSalary}. Everyone is happy now! except you :)`;
+        const messageTwo = `Thank you for sharing kindly your salary ${salaryInputEl} with us as ${salarySplitted}. Everyone is happy now! except you :)`;
         textSecondOutputEl.innerHTML = messageTwo;
         outDataSecondFormEl.appendChild(textSecondOutputEl);
 
