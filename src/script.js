@@ -30,6 +30,6 @@ function splitNumber() {
         alert('Please enter a valid 5-digit number');
     } else {
         const digitsArray = Array.from(userInput);
-        document.getElementById('outDataSecondForm').innerHTML = "Splitted numbers are: " + digitsArray;
+        document.getElementById('outDataSecondForm').innerHTML = "Splitted numbers are: " + digitsArray.join(' ');
     }
 }
