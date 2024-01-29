@@ -30,9 +30,10 @@ function splitNumber() {
     if (isNaN(userInput) || (userInput.length !== 5)) {
         alert('Please enter a valid 5-digit number');
     } else {
-        const digitsArray = userInput.split(' ').map(Number);
+        const digitsArray = userInput.split(' ');
+        console.log(digitsArray);
 
-        document.getElementById('outDataSecondForm').innerHTML = "Splitted numbers are: " + digitsArray.join(", ");
+        document.getElementById('outDataSecondForm').innerHTML = "Splitted numbers are: " + digitsArray;
     }
 
 
