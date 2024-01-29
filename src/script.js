@@ -1,9 +1,10 @@
-
 const firstInputForm = document.getElementById('first-input-form');
 const firsInputEl = document.getElementById('first-input');
 const secondInputEl = document.getElementById('second-input');
 const thirdInputEl = document.getElementById('third-input');
 const outDataFirstFormEl = document.getElementById('outDataFirstForm');
+
+const outDataSecondFormEl = document.getElementById('outDataSecondForm');
 
 const textFirstOutputEl = document.createElement('p');
 
@@ -22,19 +23,13 @@ firstInputForm.addEventListener('submit', function (e) {
 });
 
 
-const outDataSecondFormEl = document.getElementById('outDataSecondForm');
-
 function splitNumber() {
     const userInput = document.getElementById('numberInput').value;
 
     if (isNaN(userInput) || (userInput.length !== 5)) {
         alert('Please enter a valid 5-digit number');
     } else {
-        const digitsArray = userInput.split(' ');
-        console.log(digitsArray);
-
+        const digitsArray = Array.from(userInput);
         document.getElementById('outDataSecondForm').innerHTML = "Splitted numbers are: " + digitsArray;
     }
-
-
 }
