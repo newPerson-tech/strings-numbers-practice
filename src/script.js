@@ -1,54 +1,39 @@
-document.addEventListener('DOMContentLoaded', onReady);
 
-function onReady() {
+const firstInputForm = document.getElementById('first-input-form');
+const firsInputEl = document.getElementById('first-input');
+const secondInputEl = document.getElementById('second-input');
+const thirdInputEl = document.getElementById('third-input');
+const outDataFirstFormEl = document.getElementById('outDataFirstForm');
 
-    const firstInputForm = document.getElementById('first-input-form');
-    const firstNameInputEl = document.getElementById('first-input');
-    const secondNameInputEl = document.getElementById('second-input');
-    const petNameInputEl = document.getElementById('third-input');
-    const outDataFirstFormEl = document.getElementById('outDataFirstForm');
+const textFirstOutputEl = document.createElement('p');
 
-    const textFirstOutputEl = document.createElement('p');
+firstInputForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const values = [
+        firsInputEl.value,
+        secondInputEl.value,
+        thirdInputEl.value,
+    ];
 
-    firstInputForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const inputnames = [
-            firstNameInputEl.value,
-            secondNameInputEl.value,
-            petNameInputEl.value,
-        ];
+    const message = `Voila, a nourishing soup of a day based on ${values[0]} broth with ${values[1]} added, flavoured with ${values[2]} is ready for you to try`;
+    textFirstOutputEl.innerHTML = message;
+    outDataFirstFormEl.appendChild(textFirstOutputEl);
 
-        const message = `Voila, a nourishing soup of a day based on ${inputnames[0]} broth with ${inputnames[1]} added, flavoured with ${inputnames[2]} is ready for you to try`;
-        textFirstOutputEl.innerHTML = message;
-        outDataFirstFormEl.appendChild(textFirstOutputEl);
-
-    });
+});
 
 
+const outDataSecondFormEl = document.getElementById('outDataSecondForm');
 
-    const secondInputForm = document.getElementById('second-input-form');
-    const salaryInputEl = document.getElementById('input-number');
-    const outDataSecondFormEl = document.getElementById('outDataSecondForm');
-    const textSecondOutputEl = document.createElement('span');
+function splitNumber() {
+    const userInput = document.getElementById('numberInput').value;
 
+    if (isNaN(userInput) || (userInput.length !== 5)) {
+        alert('Please enter a valid 5-digit number');
+    } else {
+        const digitsArray = userInput.split(' ').map(Number);
 
-    const salaryRecieved = salaryInputEl.value;
-    const salarySplitted = 0;
+        document.getElementById('outDataSecondForm').innerHTML = "Splitted numbers are: " + digitsArray.join(", ");
+    }
 
-    secondInputForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        if (typeof salaryRecieved === number) {
-            salarySplitted = salaryRecieved.toString().split(''.join(" "));
-
-        } else {
-            alert('Entered input is not a number');
-        }
-
-        const messageTwo = `Thank you for sharing kindly your salary ${salaryRecieved} with us as ${salarySplitted}. Everyone is happy now! except you :)`;
-
-        textSecondOutputEl.innerHTML = messageTwo;
-        outDataSecondFormEl.appendChild(textSecondOutputEl);
-    });
 
 }

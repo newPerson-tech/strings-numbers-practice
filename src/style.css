@@ -26,3 +26,17 @@
     margin: 10px 10px;
     padding: 5px 10px;
 }
+
+#submit-number-button {
+    margin: 10px 10px;
+    padding: 5px 10px;
+    background-color: antiquewhite;
+    font-size: 14px;
+}
+
+#numberInput {
+    background-color: antiquewhite;
+    font-size: 14px;
+    padding: 3px;
+    margin: 5px;
+}
